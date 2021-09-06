@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjose-d <anjose-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 12:46:04 by anjose-d          #+#    #+#             */
-/*   Updated: 2021/09/01 20:58:48 by anjose-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 00:54:13 by anjose-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
 char	*get_line(char **buffer_scan, char **line);
-ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd);
+void	ft_idline(char **buffer_scan, char **buffer, char **line, int fd);
 
 char	*get_next_line(int fd)
 {
 	static char	*buffer_scan[OPEN_MAX];
 	char		*buffer;
 	char		*line;
-	ssize_t		n;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
@@ -34,13 +33,13 @@ char	*get_next_line(int fd)
 	}
 	if (!buffer_scan[fd])
 		buffer_scan[fd] = ft_strdup("");
-	n = ft_idline(&buffer_scan[fd], &buffer, &line, fd);
-	if (!line && !n)
+	ft_idline(&buffer_scan[fd], &buffer, &line, fd);
+	if (!line)
 		return (NULL);
 	return (line);
 }
 
-ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
+void	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
 {
 	ssize_t	n;
 	char	*fptr;
@@ -62,7 +61,6 @@ ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
 		free(*line);
 		*line = NULL;
 	}
-	return (n);
 }
 
 char	*get_line(char **buffer_scan, char **line)

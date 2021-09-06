@@ -6,21 +6,20 @@
 /*   By: anjose-d <anjose-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 12:46:04 by anjose-d          #+#    #+#             */
-/*   Updated: 2021/09/01 21:22:23 by anjose-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 00:48:54 by anjose-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 char	*get_line(char **buffer_scan, char **line);
-ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd);
+void	ft_idline(char **buffer_scan, char **buffer, char **line, int fd);
 
 char	*get_next_line(int fd)
 {
 	static char	*buffer_scan = NULL;
 	char		*buffer;
 	char		*line;
-	ssize_t		n;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -34,13 +33,13 @@ char	*get_next_line(int fd)
 	}
 	if (!buffer_scan)
 		buffer_scan = ft_strdup("");
-	n = ft_idline(&buffer_scan, &buffer, &line, fd);
-	if (!line && !n)
+	ft_idline(&buffer_scan, &buffer, &line, fd);
+	if (!line)
 		return (NULL);
 	return (line);
 }
 
-ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
+void	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
 {
 	ssize_t	n;
 	char	*fptr;
@@ -62,7 +61,6 @@ ssize_t	ft_idline(char **buffer_scan, char **buffer, char **line, int fd)
 		free(*line);
 		*line = NULL;
 	}
-	return (n);
 }
 
 char	*get_line(char **buffer_scan, char **line)

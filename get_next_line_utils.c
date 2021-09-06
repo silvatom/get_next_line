@@ -6,7 +6,7 @@
 /*   By: anjose-d <anjose-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:06:56 by anjose-d          #+#    #+#             */
-/*   Updated: 2021/09/01 21:28:09 by anjose-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 01:18:57 by anjose-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ret[len_s1 + i] = '\0';
 	return (ret);
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

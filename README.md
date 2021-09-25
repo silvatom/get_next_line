@@ -13,11 +13,11 @@ Using only ONE static variable, the function is able to ouputs a line from diffe
 ## FILES
 
 #### Mandatory
-* get_next_line.h - header file
-* get_next_line.c - the main functions
-* get_next_line_utils.c - additional functions
+* [**get_next_line.h**](https://github.com/silvatom/get_next_line/blob/master/get_next_line.h) - header file
+* [**get_next_line.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line.c) - the main functions
+* [**get_next_line_utils.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_utils.c) - additional functions
 
 #### Bonus
-* get_next_line_bonus.h - bonus header file
-* get_next_line.bonus.c - the main bonus functions
-* get_next_line_utils.bonus.c - additional functions
+* [**get_next_line_bonus.h**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_bonus.h) - bonus header file
+* [**get_next_line.bonus.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_bonus.c) - the main bonus functions
+* [**get_next_line_utils.bonus.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_utils_bonus.c) - additional functions

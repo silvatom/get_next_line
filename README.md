@@ -27,7 +27,7 @@ Using only ONE static variable, the function is able to ouputs a line from diffe
 * [**get_next_line.bonus.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_bonus.c) - the main bonus functions
 * [**get_next_line_utils.bonus.c**](https://github.com/silvatom/get_next_line/blob/master/get_next_line_utils_bonus.c) - additional functions
 
-# Use cases
+## Use cases
 ### Getting input from *stdin* (like *scanf()*)
 ```c
 #include <stdio.h>

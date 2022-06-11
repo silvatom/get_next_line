@@ -39,10 +39,11 @@ int main(void)
 
 	input = get_next_line(0);
 	printf("%s", input);
+	free(input);
 }
 ```
 
-### Getting input from a file (named "file.txt")
+### Getting input from a *file* (named "file.txt")
 ```c
 #include <stdio.h>
 #include <fcntl.h>
@@ -56,6 +57,29 @@ int main(void)
 	file_fd = open("file.txt", O_RDONLY);
 	input = get_next_line(file_fd);
 	printf("%s", input);
+	free(input);
+}
+```
+
+### Bonus example: getting input from a *file* (named "file.txt") and from *stdin*
+```c
+#include <stdio.h>
+#include <fcntl.h>
+#include "get_next_line.h"
+
+int main(void)
+{
+	char	*input;
+	int		file_fd;
+
+	file_fd = open("file.txt", O_RDONLY);
+	input = get_next_line(file_fd);
+	printf("%s", input);
+	free(input);
+
+	input = get_next_line(0);
+	printf("%s", input);
+	free(input);
 }
 ```
 
@@ -63,4 +87,7 @@ int main(void)
 Copy and paste the snippets in a ***<main.c>*** file and compile with the line above:
 ```
 gcc main.c get_next_line.c get_next_line_utils.c
+```
+```
+gcc main.c get_next_line_bonus.c get_next_line_utils_bonus.c
 ```

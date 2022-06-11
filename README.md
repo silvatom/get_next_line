@@ -84,10 +84,12 @@ int main(void)
 ```
 
 ### Compilation for the examples
-Copy and paste the snippets in a ***<main.c>*** file and compile with the line above:
+Copy and paste the snippets in a ***<main.c>*** file and compile with one of the lines below:
+* Mandatory:
 ```
 gcc main.c get_next_line.c get_next_line_utils.c
 ```
+* Bonus:
 ```
 gcc main.c get_next_line_bonus.c get_next_line_utils_bonus.c
 ```
